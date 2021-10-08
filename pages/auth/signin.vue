@@ -1,33 +1,42 @@
 <template>
-  <v-card>
-    <v-card-title>Mello</v-card-title>
-    <v-card elevation="2">
-      <v-card-text>
-        <v-form>
-          <v-text-field
-            v-model="email"
-            label="Email"
-            outlined
-            required
-            prepend-inner-icon="mdi-mail"
-            @input="$v.email.$touch()"
-            @blur="$v.email.$touch()"
-            :error-messages="emailErrors"
-            >
-          </v-text-field>
-          <v-text-field
-            v-model="password"
-            label="Password"
-            type="password"
-            outlined
-            required
-            prepend-inner-icon="mdi-lock"
-            @input="$v.password.$touch()"
-            @blur="$v.password.$touch()"
-            :error-messages="passwordErrors"
-            >
-          </v-text-field>
-          <v-card-actions justify-center>
+  <v-row align="center" justify="center">
+    <v-col cols="12" sm="8" md="4" align="center">
+      <v-card>
+        <v-card-title class="signin-title justify-center">Mello</v-card-title>
+        <v-card-text>
+          <v-form>
+            <v-text-field
+              v-model="email"
+              label="Email"
+              outlined
+              required
+              prepend-inner-icon="mdi-mail"
+              @input="$v.email.$touch()"
+              @blur="$v.email.$touch()"
+              :error-messages="emailErrors"
+              >
+            </v-text-field>
+            <v-text-field
+              v-model="password"
+              label="Password"
+              type="password"
+              outlined
+              required
+              prepend-inner-icon="mdi-lock"
+              @input="$v.password.$touch()"
+              @blur="$v.password.$touch()"
+              :error-messages="passwordErrors"
+              >
+            </v-text-field>
+          </v-form>
+          <div class="signin-link">
+            <p>Don't have an account?</p>
+            <a href="signup">Register here</a>
+          </div>
+          <div class="signin-link">
+            <p>Forgot password?</p>
+          </div>
+          <v-card-actions class="justify-center">
             <v-btn
               class="signin-button"
               outlined
@@ -37,10 +46,10 @@
               Login
             </v-btn>
           </v-card-actions>
-        </v-form>
-      </v-card-text>
-    </v-card>
-  </v-card>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
